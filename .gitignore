@@ -1,0 +1,26 @@
+# .NET / C#
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+*.deps
+
+# IDEs
+.idea/
+*.iml
+.DS_Store
+
+# Legacy setup folders
+DotNetApi/
+api/
