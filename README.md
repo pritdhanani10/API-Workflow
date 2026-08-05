@@ -1,8 +1,30 @@
 # 🚀 API Workflow
 
+<p align="center">
+  <img src="Flutter-App/assets/images/app_icon.png" width="160" alt="API Workflow Logo" />
+</p>
+
 A complete learning project demonstrating how a **Flutter** application communicates with a **.NET Web API** and **MySQL** database using REST APIs.
 
-The goal of this project is to help beginners understand the complete request-response lifecycle, from the mobile application to the backend server and database.
+---
+
+## 🔄 Application API Workflow Architecture
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Flutter as 📱 Flutter App
+    participant Inspector as 🔍 API Flow Inspector
+    participant WebAPI as ⚡ .NET Web API (:5000)
+    participant MySQL as 🐬 MySQL Database
+
+    Flutter->>WebAPI: HTTP GET / POST / PUT / DELETE /api/students
+    Note over WebAPI: EF Core / ADO.NET executes query
+    WebAPI->>MySQL: Execute SQL Query (e.g., SELECT * FROM students)
+    MySQL-->>WebAPI: Return Records / Status
+    WebAPI-->>Flutter: Return 200 OK + JSON + Header (X-SQL-Executed)
+    Flutter->>Inspector: Log HTTP Method, URL, Response Code, Execution Time & SQL Query
+```
 
 ---
 
