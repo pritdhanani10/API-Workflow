@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     defaults:
@@ -33,3 +34,9 @@ jobs:
 
       - name: Build Release APK
         run: flutter build apk --release
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: Flutter-App/build/app/outputs/flutter-apk/app-release.apk
